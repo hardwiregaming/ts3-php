@@ -1,18 +1,19 @@
 {
-    "name": "fkubis/teamspeak-php-framework",
+    "name": "hardwiregaming/ts3-php",
     "type": "library",
     "description": "Clone of TS3 PHP Framework 1.1.23 providing the library as composer project.",
     "keywords": ["teamspeak3"],
     "minimum-stability": "dev",
-    "homepage": "https://github.com/fkubis/teamspeak-php-framework",
+    "homepage": "https://github.com/hardwiregaming/ts3-php",
     "license": "GPL2",
     "authors": [
         {
-            "name": "Sven Paulsen"
+            "name": "Shadow",
+            "email": "shadow@hardwiregaming.com"
         },
         {
-            "name": "Frank Kubis",
-            "email": "f.kubis@aranox.de"
+            "name": "Arcdigital",
+            "email": "me@arc.digital"
         }
     ],
     "autoload": {
