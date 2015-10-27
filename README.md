@@ -13,9 +13,7 @@ Install via composer:
         "hardwiregaming/teamspeak-php-framework": "~1.1"
     },
 
-Skipp the required_once part of official documentation and replace it with use TeamSpeak3\TeamSpeak3 statement.
-
-Examples:
+Example:
 
 ```php
 namespace Foo;
