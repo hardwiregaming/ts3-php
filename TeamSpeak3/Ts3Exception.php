@@ -28,7 +28,7 @@
 namespace TeamSpeak3;
 
 use TeamSpeak3\Helper\Signal;
-use TeamSpeak3\Helper\String;
+use TeamSpeak3\Helper\HelperString;
 
 
 /**
@@ -65,10 +65,10 @@ class Ts3Exception extends \Exception
     /**
      * Prepares a custom error message by replacing pre-defined signs with given values.
      *
-     * @param \Teamspeak3\Helper\String $mesg
-     * @return \Teamspeak3\Helper\String
+     * @param \Teamspeak3\Helper\HelperString $mesg
+     * @return \Teamspeak3\Helper\HelperString
      */
-    protected function prepareCustomMessage(String $mesg)
+    protected function prepareCustomMessage(HelperString $mesg)
     {
         $args = array(
             "code" => $this->getCode(),
@@ -98,7 +98,7 @@ class Ts3Exception extends \Exception
             throw new self("custom message for code 0x" . strtoupper(dechex($code)) . " must be a string");
         }
 
-        self::$messages[(int)$code] = new String($mesg);
+        self::$messages[(int)$code] = new HelperString($mesg);
     }
 
     /**

@@ -322,7 +322,7 @@ class Convert
             $array["level"] = TeamSpeak3::LOGLEVEL_ERROR;
             $array["channel"] = "ParamParser";
             $array["server_id"] = "";
-            $array["msg"] = String::factory("convert error (" . trim($entry) . ")");
+            $array["msg"] = HelperString::factory("convert error (" . trim($entry) . ")");
             $array["msg_plain"] = $entry;
             $array["malformed"] = true;
         } else {
@@ -330,7 +330,7 @@ class Convert
             $array["level"] = self::logLevel(trim($parts[1]));
             $array["channel"] = trim($parts[2]);
             $array["server_id"] = trim($parts[3]);
-            $array["msg"] = String::factory(trim($parts[4]));
+            $array["msg"] = HelperString::factory(trim($parts[4]));
             $array["msg_plain"] = $entry;
             $array["malformed"] = false;
         }
@@ -358,8 +358,8 @@ class Convert
      */
     public static function version($version, $format = "Y-m-d h:i:s")
     {
-        if (!$version instanceof String) {
-            $version = new String($version);
+        if (!$version instanceof HelperString) {
+            $version = new HelperString($version);
         }
 
         $buildno = $version->section("[", 1)->filterDigits()->toInt();
@@ -375,8 +375,8 @@ class Convert
      */
     public static function versionShort($version)
     {
-        if (!$version instanceof String) {
-            $version = new String($version);
+        if (!$version instanceof HelperString) {
+            $version = new HelperString($version);
         }
 
         return $version->section(" ", 0);
