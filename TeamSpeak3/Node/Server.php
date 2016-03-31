@@ -28,7 +28,7 @@
 namespace TeamSpeak3\Node;
 
 use TeamSpeak3\Adapter\ServerQuery\Reply;
-use TeamSpeak3\Helper\String;
+use TeamSpeak3\Helper\HelperString;
 use TeamSpeak3\TeamSpeak3;
 use TeamSpeak3\Ts3Exception;
 
@@ -477,7 +477,7 @@ class Server extends AbstractNode
             $files[$i]["sid"] = $this->getId();
             $files[$i]["cid"] = $files[0]["cid"];
             $files[$i]["path"] = $files[0]["path"];
-            $files[$i]["src"] = new String($cid ? $files[$i]["path"] : "/");
+            $files[$i]["src"] = new HelperString($cid ? $files[$i]["path"] : "/");
 
             if (!$files[$i]["src"]->endsWith("/")) {
                 $files[$i]["src"]->append("/");

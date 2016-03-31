@@ -224,7 +224,7 @@ class Uri
      */
     public function getScheme($default = null)
     {
-        return ($this->hasScheme()) ? new String($this->scheme) : $default;
+        return ($this->hasScheme()) ? new HelperString($this->scheme) : $default;
     }
 
     /**
@@ -272,7 +272,7 @@ class Uri
      */
     public function getUser($default = null)
     {
-        return ($this->hasUser()) ? new String($this->user) : $default;
+        return ($this->hasUser()) ? new HelperString($this->user) : $default;
     }
 
     /**
@@ -320,7 +320,7 @@ class Uri
      */
     public function getPass($default = null)
     {
-        return ($this->hasPass()) ? new String($this->pass) : $default;
+        return ($this->hasPass()) ? new HelperString($this->pass) : $default;
     }
 
     /**
@@ -356,7 +356,7 @@ class Uri
      */
     public function getHost($default = null)
     {
-        return ($this->hasHost()) ? new String($this->host) : $default;
+        return ($this->hasHost()) ? new HelperString($this->host) : $default;
     }
 
     /**
@@ -440,7 +440,7 @@ class Uri
      */
     public function getPath($default = null)
     {
-        return ($this->hasPath()) ? new String($this->path) : $default;
+        return ($this->hasPath()) ? new HelperString($this->path) : $default;
     }
 
     /**
@@ -535,7 +535,7 @@ class Uri
             if (ctype_digit($val)) {
                 return intval($val);
             } elseif (is_string($val)) {
-                return new String($val);
+                return new HelperString($val);
             } else {
                 return $val;
             }
@@ -589,7 +589,7 @@ class Uri
      */
     public function getFragment($default = null)
     {
-        return ($this->hasFragment()) ? new String($this->fragment) : $default;
+        return ($this->hasFragment()) ? new HelperString($this->fragment) : $default;
     }
 
     /**
@@ -664,7 +664,7 @@ class Uri
     {
         $sheme = (self::getHostParam("HTTPS") == "on") ? "https" : "http";
 
-        $serverName = new String(self::getHostParam("HTTP_HOST"));
+        $serverName = new HelperString(self::getHostParam("HTTP_HOST"));
         $serverPort = self::getHostParam("SERVER_PORT");
         $serverPort = ($serverPort != 80 && $serverPort != 443) ? ":" . $serverPort : "";
 
@@ -672,7 +672,7 @@ class Uri
             $serverName = $serverName->replace($serverPort, "");
         }
 
-        return new String($sheme . "://" . $serverName . $serverPort);
+        return new HelperString($sheme . "://" . $serverName . $serverPort);
     }
 
     /**
@@ -682,7 +682,7 @@ class Uri
      */
     public static function getBaseUri()
     {
-        $scriptPath = new String(dirname(self::getHostParam("SCRIPT_NAME")));
+        $scriptPath = new HelperString(dirname(self::getHostParam("SCRIPT_NAME")));
 
         return self::getHostUri()->append(($scriptPath == DIRECTORY_SEPARATOR ? "" : $scriptPath) . "/");
     }

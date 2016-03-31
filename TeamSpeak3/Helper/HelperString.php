@@ -38,7 +38,7 @@ use TeamSpeak3\Helper\Signal;
  * @class String
  * @brief Helper class for string handling.
  */
-class String implements ArrayAccess, Iterator, Countable
+class HelperString implements ArrayAccess, Iterator, Countable
 {
     /**
      * Stores the original string.
@@ -56,7 +56,7 @@ class String implements ArrayAccess, Iterator, Countable
      * The String constructor.
      *
      * @param  string $string
-     * @return \Teamspeak3\Helper\String
+     * @return \Teamspeak3\Helper\HelperString
      */
     public function __construct($string)
     {
