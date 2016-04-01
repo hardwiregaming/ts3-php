@@ -35,4 +35,6 @@ class TeamSpeak3Adapater
 ```
 
 
-For more information visit the [official documentation](https://docs.planetteamspeak.com/ts3/php/framework/).
+For more information visit the [official documentation][1].
+
+[1]: https://ts3-php.readthedocs.org
